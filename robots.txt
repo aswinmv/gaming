@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: http://localhost:8000/sitemap.xml
+
+# Disallow admin if you have one in future
+# Disallow: /admin/
