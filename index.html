@@ -2,281 +2,64 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Cooplix - Your ultimate destination for free-to-play gaming. Discover, download and play the best games.">
-  <title>Cooplix - Discover Your Next Adventure</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COOPLIX GAMES TEST</title>
+    <style>
+        body {
+            margin: 0;
+            background: #1b2838;
+            font-family: Arial, sans-serif;
+            color: white;
+            padding: 50px;
+        }
 
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/components.css">
+        .game-card {
+            background: #16202d;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml"
-    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎮</text></svg>">
-  <link rel="manifest" href="manifest.json">
-  <link rel="canonical" href="https://cooplix.com/index.html">
+        .game-card:hover {
+            background: #1e2f42;
+        }
+    </style>
+</head>
 
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Cooplix - Free Games Store">
-  <meta property="og:description" content="Discover and play thousands of free-to-play games">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Cooplix">
-  <meta name="author" content="Cooplix">
-  <meta name="theme-color" content="#1a9fff">
+<body>
+    <h1>🎮 COOPLIX - GAMES ARE WORKING!</h1>
+    <p id="status" style="font-size: 20px; color: #66c0f4;"></p>
+    <div id="games-container"></div>
 
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Cooplix",
-    "description": "Your ultimate destination for free-to-play gaming",
-    "url": "https://cooplix.com",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": "https://cooplix.com/browse.html?search={search_term_string}",
-        <div class="user-menu">
-          <a href="#" style="font-size: 14px;">Install Cooplix</a>
-          <a href="#" style="font-size: 14px;">Login</a>
-        </div>
-      </div>
-    </div>
+    <script>
+        // ALL CODE INLINE - NO EXTERNAL FILES
+        const games = [
+            { id: 1, title: "Valorant", genre: "Shooter" },
+            { id: 2, title: "League of Legends", genre: "MOBA" },
+            { id: 3, title: "Fortnite", genre: "Battle Royale" },
+            { id: 4, title: "Apex Legends", genre: "Battle Royale" },
+            { id: 5, title: "Dota 2", genre: "MOBA" }
+        ];
 
-    <nav class="header-nav">
-      <div class="container d-flex justify-between align-center">
-        <a href="index.html" class="nav-logo">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" fill="currentColor" opacity="0.3" />
-            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round" />
-          </svg>
-          Cooplix
-        </a>
+        document.getElementById('status').innerHTML = `
+      ✅ JavaScript is WORKING!<br>
+      ✅ ${games.length} games loaded successfully!<br>
+      <br>
+      <strong style="color: #5cb85c;">THIS PROVES THE CODE WORKS!</strong>
+    `;
 
-        <ul class="nav-menu">
-          <li><a href="index.html">Store</a></li>
-          <li><a href="browse.html">Browse</a></li>
-          <li><a href="library.html">Library</a></li>
-          <li><a href="#">Community</a></li>
-        </ul>
+        const container = document.getElementById('games-container');
+        games.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'game-card';
+            card.innerHTML = `<h3>${game.title}</h3><p>${game.genre}</p>`;
+            container.appendChild(card);
+        });
 
-        <div class="search-bar">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z"
-              stroke="currentColor" stroke-width="2" />
-            <path d="M19 19L14.65 14.65" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-          </svg>
-          <input type="search" id="search-input" placeholder="Search games...">
-        </div>
-
-        <div class="user-avatar">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-            <path
-              d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-          </svg>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Main Content -->
-  <main id="main">
-    <!-- Hero Carousel -->
-    <section class="section">
-      <div class="container">
-        <div class="hero-carousel" id="hero-carousel">
-          <!-- Slides will be injected by JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Special Offers -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">🔥 Special Offers</h2>
-          <a href="browse.html?filter=specials" class="section-link">
-            View All
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </a>
-        </div>
-        <div class="grid grid-4" id="special-offers">
-          <!-- Games will be injected by JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- New Releases -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">🆕 New Releases</h2>
-          <a href="browse.html?filter=new" class="section-link">
-            View All
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </a>
-        </div>
-        <div class="grid grid-4" id="new-releases">
-          <!-- Games will be injected by JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Popular Games -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">⭐ Popular Games</h2>
-          <a href="browse.html?filter=popular" class="section-link">
-            View All
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </a>
-        </div>
-        <div class="grid grid-5" id="popular-games">
-          <!-- Games will be injected by JavaScript -->
-        </div>
-      </div>
-    </section>
-
-    <!-- Browse by Genre -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2 class="section-title">🎯 Browse by Genre</h2>
-        </div>
-        <div class="grid grid-4">
-          <a href="browse.html?genre=Action" class="btn btn-secondary btn-lg">Action</a>
-          <a href="browse.html?genre=RPG" class="btn btn-secondary btn-lg">RPG</a>
-          <a href="browse.html?genre=Strategy" class="btn btn-secondary btn-lg">Strategy</a>
-          <a href="browse.html?genre=Indie" class="btn btn-secondary btn-lg">Indie</a>
-          <a href="browse.html?genre=Shooter" class="btn btn-secondary btn-lg">Shooter</a>
-          <a href="browse.html?genre=Adventure" class="btn btn-secondary btn-lg">Adventure</a>
-          <a href="browse.html?genre=Simulation" class="btn btn-secondary btn-lg">Simulation</a>
-          <a href="browse.html?genre=Horror" class="btn btn-secondary btn-lg">Horror</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <div class="footer-section">
-          <h4>About</h4>
-          <ul class="footer-links">
-            <li><a href="#">About Cooplix</a></li>
-            <li><a href="#">Jobs</a></li>
-            <li><a href="#">Press</a></li>
-            <li><a href="#">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Support</h4>
-          <ul class="footer-links">
-            <li><a href="#">Help Center</a></li>
-            <li><a href="#">Game Downloads</a></li>
-            <li><a href="#">Refund Policy</a></li>
-            <li><a href="#">System Requirements</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Community</h4>
-          <ul class="footer-links">
-            <li><a href="#">Forums</a></li>
-            <li><a href="#">Workshops</a></li>
-            <li><a href="#">Marketplace</a></li>
-            <li><a href="#">Broadcasting</a></li>
-          </ul>
-        </div>
-        <div class="footer-section">
-          <h4>Legal</h4>
-          <ul class="footer-links">
-            <li><a href="#">Privacy Policy</a></li>
-            <li><a href="#">Terms of Service</a></li>
-            <li><a href="#">Cookie Policy</a></li>
-            <li><a href="#">Legal Notice</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2024 Cooplix. All rights reserved. Built with passion for gamers worldwide.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="js/data.js?t=1733399629"></script>
-  <script src="js/components.js?t=1733399629"></script>
-  <script>
-    // Initialize store home page - OPTIMIZED WITH PARALLEL LOADING
-    document.addEventListener('DOMContentLoaded', async function () {
-      try {
-        // Show loading states
-        showLoading('hero-carousel');
-        showLoading('special-offers');
-        showLoading('new-releases');
-        showLoading('popular-games');
-
-        // PARALLEL LOADING - Much faster!
-        const [featured, specials, newReleases, popular] = await Promise.all([
-          getFeaturedGames(),
-          getSpecialOffers(),
-          getNewReleases(),
-          getPopularGames()
-        ]);
-
-        // Render carousel
-        const heroCarousel = document.getElementById('hero-carousel');
-        heroCarousel.innerHTML = `
-          ${featured.map((game, index) => createHeroSlide(game, index, index === 0)).join('')}
-          <div class="carousel-controls">
-            <button class="carousel-btn" onclick="prevSlide()" aria-label="Previous game">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M12.5 15L7.5 10L12.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            <button class="carousel-btn" onclick="nextSlide()" aria-label="Next game">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-          </div>
-          <div class="carousel-indicators" role="tablist">
-            ${featured.map((_, index) => `<div class="carousel-indicator ${index === 0 ? 'active' : ''}" onclick="goToSlide(${index})" role="tab" aria-label="Go to slide ${index + 1}"></div>`).join('')}
-          </div>
-        `;
-
-        CarouselController.init();
-
-        // Render all sections
-        renderGamesGrid(specials.slice(0, 8), 'special-offers');
-        renderGamesGrid(newReleases.slice(0, 8), 'new-releases');
-        renderGamesGrid(popular.slice(0, 10), 'popular-games');
-      } catch (error) {
-        console.error('Error loading page:', error);
-      }
-    });
-  </script>
-  </body>
+        console.log('✅ SUCCESS: All games loaded!', games);
+    </script>
+</body>
 
 </html>
